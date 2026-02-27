@@ -15,32 +15,15 @@ public class Explosion : MonoBehaviour
         Vector3 _currentScale = transform.localScale * _scaleIndex;
 
         _spawner.TrySpawn(_currentScale);
-        AddForce();
+        AddForce(_spawner.TrySpawn(_currentScale));
         Destroy(gameObject);
     }
 
-    private void AddForce()
+    private void AddForce(List<Rigidbody> childCubs)
     {
-        foreach (Rigidbody explodableObject in GetObjects())
+        foreach (Rigidbody explodableObject in childCubs)
         {
             explodableObject.AddExplosionForce(_force, transform.position, _radius);
         }
-    }
-
-    private List<Rigidbody> GetObjects()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position, _radius);
-
-        List<Rigidbody> cubs = new();
-
-        foreach (Collider hit in hits)
-        {
-            if (hit.GetComponent<Rigidbody>() != null)
-            {
-                cubs.Add(hit.attachedRigidbody);
-            }
-        }
-
-        return cubs;
     }
 }

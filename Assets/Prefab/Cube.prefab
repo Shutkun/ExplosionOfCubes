@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb0827d3cf588547b21440568a209a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 20
+  _radius: 400
   _force: 20
   _spawner: {fileID: 2648966489272598523}
 --- !u!114 &2648966489272598523

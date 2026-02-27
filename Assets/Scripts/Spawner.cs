@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -10,9 +11,12 @@ public class Spawner : MonoBehaviour
     private int _minCount = 2;
     private int _maxCount = 6;
     private int _minRoll = 1;
+    private int _maxCurrentRoll = 10;
 
-    public void TrySpawn(Vector3 spawnScale)
+    public List<Rigidbody> TrySpawn(Vector3 spawnScale)
     {
+        List<Rigidbody> childsCubs = new List<Rigidbody>();
+
         Debug.Log("шанс = " + s_maxRoll.ToString());
 
         if (RollChance())
@@ -24,10 +28,13 @@ public class Spawner : MonoBehaviour
                 GameObject spawnedObject = Instantiate(_prefab, transform.position, transform.rotation);
                 spawnedObject.transform.localScale = spawnScale;
                 _colorRandom.ChangeColor(spawnedObject);
+                childsCubs.Add(spawnedObject.GetComponent<Rigidbody>());
             }
 
             Debug.Log("шанс = " + s_maxRoll.ToString());
         }
+
+        return childsCubs;
     }
 
     private bool RollChance()
@@ -37,6 +44,11 @@ public class Spawner : MonoBehaviour
         bool isSuccess = (chance == s_maxRoll);
 
         s_maxRoll *= 2;
+
+        if (s_maxRoll > _maxCurrentRoll)
+        {
+            s_maxRoll = _maxCurrentRoll;
+        }
 
         return isSuccess;
     }

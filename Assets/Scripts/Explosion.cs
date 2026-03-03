@@ -8,14 +8,11 @@ public class Explosion : MonoBehaviour
 
     public void AddForce(List<Rigidbody> childCubs)
     {
+        Debug.Log("Запуск взрыва");
+
         foreach (Rigidbody explodableObject in childCubs)
         {
             explodableObject.AddExplosionForce(_force, transform.position, _radius);
         }
-    }
-
-    public void Destroy(GameObject cube)
-    {
-        Destroy(cube.gameObject);
     }
 }

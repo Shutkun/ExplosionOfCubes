@@ -19,11 +19,14 @@ public class Initializer : MonoBehaviour
         _raycast.Hit -= Splitting;
     }
 
-    private void Splitting(GameObject targetObject)
+    private void Splitting(Rigidbody targetObject)
     {
+        Debug.Log("Запуск инициализатора");
+
         Vector3 _currentScale = transform.localScale * _scaleIndex;
-        _spawner.CreateCubs(_currentScale);
+
+        _spawner.CreateCubs(_currentScale, targetObject.transform.position);
+        _explosion.AddForce(_spawner.GetListChildsCubs());
         _spawner.DestroyCube(targetObject);
-        _explosion.AddForce(_spawner.CreateCubs(transform.localScale));
     }
 }

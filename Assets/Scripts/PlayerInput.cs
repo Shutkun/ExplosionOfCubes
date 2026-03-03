@@ -9,6 +9,8 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Запуск инпута");
+
         if (Input.GetMouseButtonDown(_mouseButton))
         {
             Clicked?.Invoke();

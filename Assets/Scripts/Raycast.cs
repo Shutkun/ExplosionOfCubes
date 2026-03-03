@@ -5,9 +5,8 @@ public class Raycast : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
 
-    public event Action<GameObject> Hit;
-
-    private GameObject clickedObject;
+    public event Action<Rigidbody> Hit;
+    private Rigidbody clickedObject;
 
     private void OnEnable()
     {
@@ -21,14 +20,20 @@ public class Raycast : MonoBehaviour
 
     private void CastRay()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.Log("Запуск рейкаста");
 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit))
         {
-            clickedObject = hit.transform.gameObject;
-            OnPlayerClick();
+            BoxCollider collider = hit.transform.GetComponent<BoxCollider>();
+
+            if (collider != null)
+            {
+                clickedObject = hit.rigidbody;
+                OnPlayerClick();
+            }
         }
     }
 

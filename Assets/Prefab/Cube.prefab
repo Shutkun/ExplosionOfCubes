@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 1763335179000189670}
   - component: {fileID: 6305979085773037121}
   - component: {fileID: 4749118749516415898}
-  - component: {fileID: -8245505439478379843}
-  - component: {fileID: -557059823827806013}
-  - component: {fileID: -7719434536572002527}
-  - component: {fileID: 2509185830883945299}
-  - component: {fileID: -3945868979777787623}
-  - component: {fileID: -623076549328902615}
+  - component: {fileID: -5353048023618570365}
+  - component: {fileID: 2324216772641624987}
+  - component: {fileID: -5352440199588035562}
+  - component: {fileID: -4613629758129528026}
+  - component: {fileID: 8230742484333051469}
+  - component: {fileID: -2624112522187789414}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -139,7 +139,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &-8245505439478379843
+--- !u!114 &-5353048023618570365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,38 +148,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 99930290704742895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2419ab4008fb24c46b9ef0bbd0999c1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2495b781960fdd241bf8b99738ba01de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycast: {fileID: -557059823827806013}
-  _spawner: {fileID: -623076549328902615}
-  _explosion: {fileID: 2509185830883945299}
---- !u!114 &-557059823827806013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99930290704742895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b430d1b71210114c9d89ebb29672a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerInput: {fileID: -7719434536572002527}
---- !u!114 &-7719434536572002527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99930290704742895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8deeb18708fe1641bbd5ef65f8efb3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2509185830883945299
+--- !u!114 &2324216772641624987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _radius: 20
   _force: 100
---- !u!114 &-3945868979777787623
+--- !u!114 &-5352440199588035562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,10 +174,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 99930290704742895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2495b781960fdd241bf8b99738ba01de, type: 3}
+  m_Script: {fileID: 11500000, guid: 2419ab4008fb24c46b9ef0bbd0999c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-623076549328902615
+  _raycast: {fileID: 8230742484333051469}
+  _spawner: {fileID: -2624112522187789414}
+  _explosion: {fileID: 2324216772641624987}
+--- !u!114 &-4613629758129528026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99930290704742895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8deeb18708fe1641bbd5ef65f8efb3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8230742484333051469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99930290704742895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b430d1b71210114c9d89ebb29672a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInput: {fileID: -4613629758129528026}
+--- !u!114 &-2624112522187789414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,4 +218,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4749118749516415898}
-  _colorRandom: {fileID: -3945868979777787623}
+  _colorRandom: {fileID: -5353048023618570365}

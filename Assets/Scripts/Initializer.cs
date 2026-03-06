@@ -8,7 +8,6 @@ public class Initializer : MonoBehaviour
 
     private float _scaleIndex = 0.5f;
 
-
     private void OnEnable()
     {
         _raycast.Hit += Splitting;
@@ -21,9 +20,7 @@ public class Initializer : MonoBehaviour
 
     private void Splitting(Rigidbody targetObject)
     {
-        Debug.Log("Запуск инициализатора");
-
-        Vector3 _currentScale = transform.localScale * _scaleIndex;
+        Vector3 _currentScale = targetObject.transform.localScale * _scaleIndex;
 
         _spawner.CreateCubs(_currentScale, targetObject.transform.position);
         _explosion.AddForce(_spawner.GetListChildsCubs());

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -8,10 +7,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private ColorRandom _colorRandom;
     [SerializeField] private float _spawnProbability;
 
-    private List<Rigidbody> _childsCubs = new List<Rigidbody>();
 
-    public void CreateCubs(Vector3 spawnScale, Vector3 position)
+    public List<Rigidbody> CreateCubs(Vector3 spawnScale, Vector3 position)
     {
+        List<Rigidbody> _childsCubs = new List<Rigidbody>();
+
         if (IsSplitting())
         {
             int minCount = 2;
@@ -29,15 +29,14 @@ public class Spawner : MonoBehaviour
 
             }
         }
+
+        return _childsCubs;
     }
 
     public void DestroyCube(Rigidbody gameObject)
     {
         Destroy(gameObject.transform.gameObject);
-        _childsCubs.Clear();
     }
-
-    public List<Rigidbody> GetListChildsCubs() => _childsCubs.ToList();
 
     private bool IsSplitting()
     {

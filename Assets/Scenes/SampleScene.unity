@@ -828,7 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _raycast: {fileID: 1506427767}
   _spawner: {fileID: -2624112522187789414, guid: abd8df284c2321a48b6de27b668f3d22, type: 3}
-  _explosion: {fileID: 2324216772641624987, guid: abd8df284c2321a48b6de27b668f3d22, type: 3}
+  _detonator: {fileID: 2324216772641624987, guid: abd8df284c2321a48b6de27b668f3d22, type: 3}
 --- !u!1001 &1816015476
 PrefabInstance:
   m_ObjectHideFlags: 0
